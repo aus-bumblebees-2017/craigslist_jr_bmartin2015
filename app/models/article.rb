@@ -7,7 +7,7 @@ class Article < ApplicationRecord
 
   before_create :generate_edit_id
 
-  validates :title, :descriptions, :email, { presence: true}
+  validates :title, :description, :email, { presence: true}
 
   def generate_edit_id
     self.edit_id = SecureRandom.hex(6)
