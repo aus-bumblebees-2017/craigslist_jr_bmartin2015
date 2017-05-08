@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :articles, except: [:edit]
   end
 
+  resources :users, only: [:show, :create, :new]
+
   get '/categories/:category_id/articles/:id/edit/:code', to: 'articles#edit', as: 'edit_category_article'
 
   get    '/login',  to: 'sessions#new'
