@@ -1,12 +1,24 @@
-<h1>My Profile</h1>
-
-<p>My Email: <%= current_user.email %></p>
-<p>My posts:</p>
-<ul>
-<% if @user.articles.empty? %>
-  <li>No Posts</li>
-<% end %>
-<% @user.articles.each do |post| %>
-  <li><%= link_to post.title, category_article(post.category, post) %></li>
-<% end %>
-</ul>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        my profile
+      </h1>
+    </div>
+    <br>
+    <div class="container">
+      <div class="content">
+        <p>My Email: <%= current_user.email %></p>
+        <p>My posts:</p>
+        <ul>
+        <% if @user.articles.empty? %>
+          <li>No Posts</li>
+        <% end %>
+        <% @user.articles.each do |post| %>
+          <li><%= link_to post.title, category_article_path(post.category, post) %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

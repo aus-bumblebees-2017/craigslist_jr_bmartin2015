@@ -1,29 +1,43 @@
-<h1>Login</h1>
-
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        login
+      </h1>
+    </div>
+    <br>
+    <div class="container">
+      <div class="content">
 <%= form_for :session do |f| %>
 
-  <% if @user.errors.any? %>
-    <div id="error_explanation" class="text-danger">
+  <% if @errors %>
+    <div id="error_explanation" class="is-danger">
       <p>
-        <%= pluralize(@user.errors.count, "error") %> prohibited
-        this article from being saved:
+        <%= pluralize(@errors.count, "error") %> prevented you from logging in:
       </p>
       <ul>
-        <% @user.errors.full_messages.each do |msg| %>
+        <% @errors.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
+    <br>
   <% end %>
-  <p>
-    <%= f.label       :email %>
-    <%= f.email_field :email %>
-  </p>
-  <p>
-    <%= f.label          :password %>
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="field">
+    <%= f.label       :email, class: 'label' %>
+    <p class="control">
+      <%= f.email_field :email, class: 'input' %>
+    </p>
+  </div>
+  <div class="field">
+    <%= f.label          :password, class: 'label' %>
+    <p class="control">
+      <%= f.password_field :password, class: 'input' %>
+    </p>
+  </div>
+  <div class="field">
+    <p class="control">
+      <%= f.submit 'login', class: 'button is-primary' %>
+    </p>
+  </div>
 <% end %>

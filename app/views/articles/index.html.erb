@@ -1,7 +1,21 @@
-<h1><%= @category.name %></h1>
-
-<ul>
-<% @category.articles.each do |article| %>
-  <li><%= link_to(article.title, category_article_url(@category, article)) %> - <%= article.updated_at %></li>
-<% end %>
-</ul>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <%= @category.name %>
+      </h1>
+      <h2 class="subtitle">
+        <%= link_to 'new post', new_category_article_path, id: 'new-post' %>
+      </h2>
+    </div>
+    <div class="container">
+      <div class="content">
+        <ul>
+        <% @category.articles.order(:updated_at).each do |article| %>
+          <li><%= pretty_time(article.updated_at) %> - <%= link_to(article.title, category_article_url(@category, article)) %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

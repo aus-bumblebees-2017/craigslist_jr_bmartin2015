@@ -1,5 +1,15 @@
-<ul>
-<% Category.all.each do |category| %>
-<li><%= link_to(category.name, category_articles_url(category)) %></li>
+<section class="section">
+  <div class="container">
+    <div class="content">
+      <div class="columns">
+<% @cat_array.each do |columns| %>
+        <div class="column is-quarter">
+        <% columns.each do |category| %>
+          <%= link_to category.name, category_articles_path(category) %><br>
+        <% end %>
+        </div>
 <% end %>
-</ul>
+      </div>
+    </div>
+  </div>
+</section>
