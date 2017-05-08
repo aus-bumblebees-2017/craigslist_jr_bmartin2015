@@ -11,7 +11,12 @@
   <body>
 <div class="container">
   <h1>Craigslist Jr.</h1>
-  <nav> <a href="/">Home</a> > <a href="/categories/<%= @category.id %>/articles"><%= @category.name %></a></nav>
+<% if current_user %>
+  <p><%= link_to 'profile', @user %> | <%= link_to 'logout', logout_path, method: :delete %></p>
+<% else %>
+  <p><%= link_to 'register', new_user_path %> | <%= link_to 'login', login_path %></p>
+<% end %>
+  <nav> <a href="/">Home</a> > <% if !@catetory.nil? %><a href="/categories/<%= @category.id %>/articles"><%= @category.name %></a><% end %></nav>
   <br>
   <%= yield %>
 </div>
