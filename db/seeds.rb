@@ -17,6 +17,7 @@ end
 10.times { Tag.create(name: Faker::Pokemon.name)}
 
 25.times do
+  x = rand(1..Category.count)
   article_hash = {
     title: Faker::Commerce.product_name,
     description: "#{Faker::HarryPotter.quote} #{Faker::HarryPotter.quote} #{Faker::HarryPotter.quote}",
@@ -24,7 +25,8 @@ end
     price: Faker::Commerce.price,
     zip_code: Faker::Address.zip,
     edit_id: SecureRandom.hex(6),
-    category_id: rand(Category.all.count)
+    category: Category.find(x),
+    user: User.first
   }
   Article.create(article_hash)
 end
