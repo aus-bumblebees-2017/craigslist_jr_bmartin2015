@@ -1,8 +1,8 @@
-
+<br>
 <%= form_for [@category, @article] do |f| %>
 
   <% if @article.errors.any? %>
-    <div id="error_explanation" class="text-danger">
+    <div id="error_explanation" class="is-danger">
       <p>
         <%= pluralize(@article.errors.count, "error") %> prohibited
         this article from being saved:
@@ -14,32 +14,46 @@
       </ul>
     </div>
   <% end %>
-  <p>
-    <%= f.label      :title %>
-    <%= f.text_field :title %>
-  </p>
-  <p>
+  <div class="field">
+    <%= f.label      :title, class: 'label' %>
+    <p class="control">
+      <%= f.text_field :title, class: 'input' %>
+    </p>
+  </div>
+  <div class="field">
 <% if current_user %>
-    <%= f.label       :email %>
-    <%= f.email_field :email, value: current_user.email %>
+    <%= f.label       :email, class: 'label' %>
+    <p class="control">
+      <%= f.email_field :email, value: current_user.email, class: 'input' %>
+    </p>
 <% else %>
     <%= f.label       :email %>
-    <%= f.email_field :email, value: current_user.email %>
+    <p class="control">
+      <%= f.email_field :email, value: current_user.email, class: 'input' %>
+    </p>
 <% end %>
-  </p>
-  <p>
-    <%= f.label      :price %>
-    <%= f.text_field :price %>
-  </p>
-  <p>
-    <%= f.label       :zip_code %>
-    <%= f.text_field  :zip_code %>
-  </p>
-  <p>
-    <%= f.label     :description %><br>
-    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label      :price, class: 'label' %>
+    <p class="control">
+      <%= f.text_field :price, class: 'input' %>
+    </p>
+  </div>
+  <div class="field">
+    <%= f.label       :zip_code, class: 'label' %>
+    <p class="control">
+      <%= f.text_field  :zip_code, class: 'input' %>
+    </p>
+  </div>
+  <div class="field">
+    <%= f.label     :description, class: 'label' %><br>
+    <p class="control">
+      <%= f.text_area :description, class: 'textarea' %>
+    </p>
 
-  <p>
-    <%= f.submit %>
-  </p>
+  <div class="field">
+    <p class="control">
+      <%= f.submit 'Submit', class: 'button is-primary' %>
+    </p>
+  </div>
 <% end %>
