@@ -11,7 +11,7 @@ Article.destroy_all
 Tag.destroy_all
 
 12.times do |i|
-  Category.create(name: Faker::Hipster.words(1))
+  Category.create(name: Faker::Hipster.words(1)[0].downcase)
 end
 
 10.times { Tag.create(name: Faker::Pokemon.name)}

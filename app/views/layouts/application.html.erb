@@ -9,6 +9,11 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+<div class="container">
+  <h1>Craigslist Jr.</h1>
+  <nav> <a href="/">Home</a> > <a href="/categories/<%= @category.id %>/articles"><%= @category.name %></a></nav>
+  <br>
+  <%= yield %>
+</div>
+</body>
 </html>
