@@ -19,7 +19,7 @@ end
 25.times do
   article_hash = {
     title: Faker::Commerce.product_name,
-    description: "#{Faker::HeyArnold.quote} #{Faker::HeyArnold.quote} #{Faker::HeyArnold.quote}",
+    description: "#{Faker::HarryPotter.quote} #{Faker::HarryPotter.quote} #{Faker::HarryPotter.quote}",
     email: Faker::Internet.safe_email,
     price: Faker::Commerce.price,
     zip_code: Faker::Address.zip,

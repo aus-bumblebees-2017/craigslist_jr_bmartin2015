@@ -166,7 +166,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
   coffee-rails (~> 4.2)
-  faker
+  faker (~> 1.7.3)
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
