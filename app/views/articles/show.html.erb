@@ -1,7 +1,9 @@
 <h1><%= @article.title %></h1>
+<p>Price: $<%= @article.price %></p>
 <p><%= @article.description %></p>
+<p>Zip Code: <%= @article.zip_code %></p>
 
-<% if session[:edit_code] %>
-  <p>You may edit your entry by going to <%= link_to(edit_category_article_url(@category, @article, @article.edit_id), edit_category_article_url(@category, @article, @article.edit_id)) %></p>
+<% if session[:edit_code] || @article.user == current_user %>
+  <p>You may edit or delete your entry by going to <%= link_to(edit_category_article_url(@category, @article, @article.edit_id), edit_category_article_url(@category, @article, @article.edit_id)) %></p>
 <% end %>
 <% session.delete(:edit_code) %>

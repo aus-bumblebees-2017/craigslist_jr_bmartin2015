@@ -1,5 +1,5 @@
 <h1><%= @category.name %></h1>
-
+<p><%= link_to 'new post', new_category_article_path, id: 'new-post' %></p>
 <ul>
 <% @category.articles.each do |article| %>
   <li><%= link_to(article.title, category_article_url(@category, article)) %> - <%= article.updated_at %></li>
