@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       helpers.log_in(@user)
       redirect_to @user
     else
+      @errors = ["invalid email or password"]
       render 'new'
     end
   end

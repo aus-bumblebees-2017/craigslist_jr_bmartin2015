@@ -10,14 +10,13 @@
       <div class="content">
 <%= form_for :session do |f| %>
 
-  <% if @user.errors.any? %>
+  <% if @errors %>
     <div id="error_explanation" class="is-danger">
       <p>
-        <%= pluralize(@user.errors.count, "error") %> prohibited
-        this article from being saved:
+        <%= pluralize(@errors.count, "error") %> prevented you from logging in:
       </p>
       <ul>
-        <% @user.errors.full_messages.each do |msg| %>
+        <% @errors.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
