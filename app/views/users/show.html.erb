@@ -15,7 +15,7 @@
           <li>No Posts</li>
         <% end %>
         <% @user.articles.each do |post| %>
-          <li><%= link_to post.title, category_article_path(post.category, post) %></li>
+          <li><%= link_to post.title, category_article_path(post.category, post) %> - <%= link_to 'edit', edit_category_article_path(post.category, post, post.edit_id) %></li>
         <% end %>
         </ul>
       </div>
