@@ -7,5 +7,9 @@ Rails.application.routes.draw do
 
   get '/categories/:category_id/articles/:id/edit/:code', to: 'articles#edit', as: 'edit_category_article'
 
+  get    '/login',  to: 'sessions#new'
+  post   '/login',  to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+
   root 'categories#index'
 end
