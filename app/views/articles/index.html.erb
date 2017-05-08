@@ -1,0 +1,7 @@
+<h1><%= @category.name %></h1>
+
+<ul>
+<% @category.articles.each do |article| %>
+  <li><%= link_to(article.title, category_article_url(@category, article)) %> - <%= article.updated_at %></li>
+<% end %>
+</ul>
