@@ -1,0 +1,12 @@
+<h1>My Profile</h1>
+
+<p>My Email: <%= current_user.email %></p>
+<p>My posts:</p>
+<ul>
+<% if @user.articles.empty? %>
+  <li>No Posts</li>
+<% end %>
+<% @user.articles.each do |post| %>
+  <li><%= link_to post.title, category_article(post.category, post) %></li>
+<% end %>
+</ul>
