@@ -18,10 +18,10 @@ end
 
 25.times do
   article_hash = {
-    title: Faker::Book.title,
-    description: Faker::Lorem.paragraph(3),
+    title: Faker::Commerce.product_name,
+    description: "#{Faker::HeyArnold.quote} #{Faker::HeyArnold.quote} #{Faker::HeyArnold.quote}",
     email: Faker::Internet.safe_email,
-    price: Faker::Number.decimal(2),
+    price: Faker::Commerce.price,
     zip_code: Faker::Address.zip,
     edit_id: SecureRandom.hex(6),
     category_id: rand(Category.all.count)
