@@ -1,2 +1,7 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.description %></p>
+
+<% if session[:edit_code] %>
+  <p>You may edit your entry by going to <%= link_to(edit_category_article_url(@category, @article, @article.edit_id), edit_category_article_url(@category, @article, @article.edit_id)) %></p>
+<% end %>
+<% session.delete(:edit_code) %>
