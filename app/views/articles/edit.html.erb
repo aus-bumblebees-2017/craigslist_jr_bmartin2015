@@ -1,6 +1,18 @@
-<h1><%= @category.name %></h1>
-<h3>Edit Post</h3>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        <%= @category.name %>
+      </h1>
+      <h2 class="subtitle">
+        edit post | <%= link_to 'delete post', [@category, @article], method: :delete, data: { confirm: 'Are you sure?' }, class: 'but' %>
+      </h2>
+    </div>
+    <div class="container">
+      <div class="content">
+        <%= render 'form' %>
+      </div>
+    </div>
+  </div>
+</section>
 
-<%= render 'form' %>
-
-<%= link_to 'Delete Post', [@category, @article], method: :delete, data: { confirm: 'Are you sure?' } %>
