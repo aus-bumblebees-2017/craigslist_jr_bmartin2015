@@ -1,3 +1,17 @@
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        craigslist jr
+      </h1>
+      <h2 class="subtitle">
+        get rid of your stuff
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
 <h1><%= @category.name %></h1>
 <p><%= link_to 'new post', new_category_article_path, id: 'new-post' %></p>
 <ul>
@@ -5,3 +19,4 @@
   <li><%= link_to(article.title, category_article_url(@category, article)) %> - <%= article.updated_at %></li>
 <% end %>
 </ul>
+</section>
